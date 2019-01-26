@@ -14,9 +14,17 @@
       <div class="jumbotron">
          <h2>সকল পোষ্ট তালিকা </h2>
          {% block content %}
+            {{form.as_p}}
+            <ul>
+               <li><a href="{% url 'cost-list' %}">Expense list</a></li>
+
+
+            </ul>
+            
          {% endblock %}
       </div>
       </div>
-    </body>
+    
+   </body>
 </html>
 </html>
