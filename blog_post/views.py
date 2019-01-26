@@ -19,7 +19,7 @@ def all_posts(request):
     }
     return render(request, 'all_post.html', context)
 
-def single_post(request):
-    post = Post.objects.get(pk=post_id)
+def single_post(request, id):
+    post = Post.objects.get(pk=id)
     print(post)
     return render(request, 'single_post.html', {'post':post})
