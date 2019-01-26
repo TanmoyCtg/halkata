@@ -1,27 +1,7 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Post List</title>
-</head>
-<body>
-    <div class="container">
-        <div class="page-header page-header-custom">
-            <h1 class="text-center">বাঙলায় জ্যাঙ্গো </h1>
-        </div>
-        <div class="jumbotron">
-            <h2>সকল পোষ্ট তালিকা </h2>
-            {% for post in post_list %}
-                <h3>{{ post.pk }}-{{ post.title }}</h3>
-            {% endfor %}
-        </div>
-    </div>
-</body>
-</html>
+{% block content%}
+    {% for post in post_list %}
+        <h2><a href="{% url 'single_post' post.pk %}">{{post.title}}</a></h2>
+    {% endfor %}
+{% endblock %}
